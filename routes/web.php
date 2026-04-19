@@ -25,6 +25,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/reports/payments/pdf', [ReportController::class, 'paymentsPdf'])->name('reports.payments.pdf');
     Route::get('/reports/occupancy', [ReportController::class, 'occupancy'])->name('reports.occupancy');
 
+
     Route::middleware('role:admin')->group(function () {
         Route::resource('users', UserController::class);
     });

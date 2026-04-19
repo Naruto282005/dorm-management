@@ -2,8 +2,12 @@
 
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h3>Students</h3>
-    <a href="{{ route('students.create') }}" class="btn btn-primary">Add Student</a>
+    <h3 class="mb-0">Students</h3>
+    <div>
+        <a href="{{ route('reports.students') }}" class="btn btn-secondary">View Report</a>
+        <a href="{{ route('reports.students.pdf') }}" class="btn btn-danger">Download PDF</a>
+        <a href="{{ route('students.create') }}" class="btn btn-primary">Add Student</a>
+    </div>
 </div>
 
 <form method="GET" class="mb-3">

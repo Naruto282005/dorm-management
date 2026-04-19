@@ -2,8 +2,12 @@
 
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h3>Payments</h3>
-    <a href="{{ route('payments.create') }}" class="btn btn-primary">Add Payment</a>
+    <h3 class="mb-0">Payments</h3>
+    <div>
+        <a href="{{ route('reports.payments') }}" class="btn btn-secondary">View Report</a>
+        <a href="{{ route('reports.payments.pdf') }}" class="btn btn-danger">Download PDF</a>
+        <a href="{{ route('payments.create') }}" class="btn btn-primary">Add Payment</a>
+    </div>
 </div>
 
 <div class="card shadow-sm border-0">
