@@ -12,11 +12,6 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
-/*
-|--------------------------------------------------------------------------
-| Shared access: Admin and Staff
-|--------------------------------------------------------------------------
-*/
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -33,11 +28,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/reports/occupancy/pdf', [ReportController::class, 'occupancyPdf'])->name('reports.occupancy.pdf');
 });
 
-/*
-|--------------------------------------------------------------------------
-| Admin only
-|--------------------------------------------------------------------------
-*/
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::resource('rooms', RoomController::class);
     Route::resource('users', UserController::class);
